@@ -31,16 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.pieChart2 = new LiveCharts.WinForms.PieChart();
             this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
@@ -58,20 +58,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Lavender;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(23, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.Size = new System.Drawing.Size(166, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter vacancy name:";
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Lavender;
-            this.textBox1.Location = new System.Drawing.Point(16, 32);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(12, 36);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(115, 25);
+            this.textBox1.Size = new System.Drawing.Size(125, 29);
             this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Python";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
@@ -79,10 +82,21 @@
             this.panel1.BackColor = System.Drawing.Color.Lavender;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(16, 80);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel1.Location = new System.Drawing.Point(12, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 42);
+            this.panel1.Size = new System.Drawing.Size(208, 71);
             this.panel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Thistle;
+            this.label3.Location = new System.Drawing.Point(46, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "10000";
             // 
             // label2
             // 
@@ -90,19 +104,9 @@
             this.label2.BackColor = System.Drawing.Color.Lavender;
             this.label2.Location = new System.Drawing.Point(12, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 16);
+            this.label2.Size = new System.Drawing.Size(172, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Number of vacancies:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Thistle;
-            this.label3.Location = new System.Drawing.Point(46, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "10000";
             // 
             // panel2
             // 
@@ -114,56 +118,40 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(16, 143);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.panel2.Location = new System.Drawing.Point(12, 165);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 154);
+            this.panel2.Size = new System.Drawing.Size(208, 185);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Thistle;
+            this.label10.Location = new System.Drawing.Point(46, 149);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "10000";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Lavender;
-            this.label4.Location = new System.Drawing.Point(12, 0);
+            this.label4.Location = new System.Drawing.Point(13, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 16);
+            this.label4.Size = new System.Drawing.Size(134, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Salary statistics:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 16);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Min:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 16);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Max:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(33, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 16);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Median:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Thistle;
-            this.label8.Location = new System.Drawing.Point(46, 81);
+            this.label8.Location = new System.Drawing.Point(46, 96);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 16);
+            this.label8.Size = new System.Drawing.Size(54, 20);
             this.label8.TabIndex = 7;
             this.label8.Text = "10000";
             // 
@@ -171,63 +159,82 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Thistle;
-            this.label9.Location = new System.Drawing.Point(46, 42);
+            this.label9.Location = new System.Drawing.Point(46, 49);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 16);
+            this.label9.Size = new System.Drawing.Size(54, 20);
             this.label9.TabIndex = 8;
             this.label9.Text = "10000";
             // 
-            // label10
+            // label5
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Thistle;
-            this.label10.Location = new System.Drawing.Point(46, 124);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 16);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "10000";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Min:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Max:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(33, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Median:";
             // 
             // cartesianChart1
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(219, 25);
+            this.cartesianChart1.Location = new System.Drawing.Point(12, 387);
             this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(436, 238);
+            this.cartesianChart1.Size = new System.Drawing.Size(679, 473);
             this.cartesianChart1.TabIndex = 4;
             this.cartesianChart1.Text = "cartesianChart1";
             // 
             // pieChart2
             // 
-            this.pieChart2.BackColor = System.Drawing.Color.SlateBlue;
-            this.pieChart2.Location = new System.Drawing.Point(16, 324);
+            this.pieChart2.BackColor = System.Drawing.Color.Transparent;
+            this.pieChart2.Location = new System.Drawing.Point(715, 506);
             this.pieChart2.Name = "pieChart2";
-            this.pieChart2.Size = new System.Drawing.Size(182, 167);
+            this.pieChart2.Size = new System.Drawing.Size(503, 354);
             this.pieChart2.TabIndex = 6;
             this.pieChart2.Text = "pieChart2";
             this.pieChart2.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.pieChart2_ChildChanged);
             // 
             // cartesianChart2
             // 
-            this.cartesianChart2.Location = new System.Drawing.Point(219, 289);
+            this.cartesianChart2.Location = new System.Drawing.Point(715, 34);
             this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(200, 202);
+            this.cartesianChart2.Size = new System.Drawing.Size(503, 445);
             this.cartesianChart2.TabIndex = 7;
             this.cartesianChart2.Text = "cartesianChart2";
             // 
             // pieChart1
             // 
-            this.pieChart1.Location = new System.Drawing.Point(474, 289);
+            this.pieChart1.Location = new System.Drawing.Point(262, 25);
             this.pieChart1.Name = "pieChart1";
-            this.pieChart1.Size = new System.Drawing.Size(181, 202);
+            this.pieChart1.Size = new System.Drawing.Size(429, 361);
             this.pieChart1.TabIndex = 8;
             this.pieChart1.Text = "pieChart1";
+            this.pieChart1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.pieChart1_ChildChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Lavender;
-            this.label11.Location = new System.Drawing.Point(216, 13);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.Location = new System.Drawing.Point(24, 366);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 16);
+            this.label11.Size = new System.Drawing.Size(124, 18);
             this.label11.TabIndex = 9;
             this.label11.Text = "Salary distribution";
             // 
@@ -235,9 +242,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Lavender;
-            this.label12.Location = new System.Drawing.Point(27, 313);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(735, 496);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 16);
+            this.label12.Size = new System.Drawing.Size(69, 18);
             this.label12.TabIndex = 10;
             this.label12.Text = "Schedule";
             // 
@@ -245,9 +253,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Lavender;
-            this.label13.Location = new System.Drawing.Point(216, 277);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(735, 13);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 16);
+            this.label13.Size = new System.Drawing.Size(92, 18);
             this.label13.TabIndex = 11;
             this.label13.Text = "Top-10 skills";
             // 
@@ -255,28 +264,30 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Lavender;
-            this.label14.Location = new System.Drawing.Point(471, 277);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(259, 13);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(127, 16);
+            this.label14.Size = new System.Drawing.Size(139, 18);
             this.label14.TabIndex = 12;
             this.label14.Text = "Working experience";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(137, 32);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(143, 36);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 25);
+            this.button1.Size = new System.Drawing.Size(77, 29);
             this.button1.TabIndex = 13;
             this.button1.Text = "update";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateBlue;
-            this.ClientSize = new System.Drawing.Size(671, 503);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1245, 872);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
