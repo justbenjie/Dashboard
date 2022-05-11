@@ -11,18 +11,18 @@ namespace PieCharts
 {
     public class Piechart
     {
-        public SeriesCollection series;
+        LiveCharts.WinForms.PieChart chart;
         public Func<ChartPoint, string> labelPoint = chartPoint =>
             string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
-        public Piechart(SeriesCollection series)
+        public Piechart(LiveCharts.WinForms.PieChart chart)
         {
-            this.series = series;
+            this.chart = chart;
         }
 
         public void DrawPiechart(Dictionary<string, int> value_count)
         {
-            series.Clear();
+
             foreach(var item in value_count)
             {
                 PieSeries pieSeries = new PieSeries
@@ -32,8 +32,11 @@ namespace PieCharts
                     DataLabels = true,
                     LabelPoint = labelPoint
                 };
-                series.Add(pieSeries);
+                chart.Series.Add(pieSeries);
             }
+
+            chart.LegendLocation = LegendLocation.Bottom;
+
         }
     }
 }
