@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
+using System.Windows.Media;
 
 namespace PieCharts
 {
@@ -22,20 +23,25 @@ namespace PieCharts
 
         public void DrawPiechart(Dictionary<string, int> value_count)
         {
-
-            foreach(var item in value_count)
+            chart.Series.Clear();
+            chart.AxisX.Clear();
+            chart.AxisY.Clear();
+            foreach (var item in value_count)
             {
                 PieSeries pieSeries = new PieSeries
                 {
                     Title = item.Key,
                     Values = new ChartValues<int> { item.Value },
                     DataLabels = true,
-                    LabelPoint = labelPoint
+                    LabelPoint = labelPoint,
+                    Stroke = Brushes.DarkGray,
+
                 };
                 chart.Series.Add(pieSeries);
             }
 
             chart.LegendLocation = LegendLocation.Bottom;
+            
 
         }
     }
