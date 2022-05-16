@@ -7,6 +7,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Media;
+using System.Windows;
 
 namespace PieCharts
 {
@@ -34,15 +35,23 @@ namespace PieCharts
                     Values = new ChartValues<int> { item.Value },
                     DataLabels = true,
                     LabelPoint = labelPoint,
-                    Stroke = Brushes.DarkGray,
-
+                    Stroke = Brushes.WhiteSmoke,
+                    Foreground = Brushes.WhiteSmoke,
+                    StrokeThickness = 0
                 };
                 chart.Series.Add(pieSeries);
             }
 
+            DefaultLegend customLegend = new DefaultLegend();
+            customLegend.BulletSize = 14;
+            customLegend.Foreground = Brushes.WhiteSmoke;
+            customLegend.Orientation = System.Windows.Controls.Orientation.Horizontal;
+            chart.DefaultLegend = customLegend;
             chart.LegendLocation = LegendLocation.Bottom;
             
-
+           
+            
+           
         }
     }
 }

@@ -37,7 +37,7 @@ namespace RowCharts
                 Title = "Frequency",
                 Values = values,
                 DataLabels = true,
-                Fill = Brushes.DarkRed,
+                Fill = Brushes.Red,
                 Foreground = Brushes.WhiteSmoke,
             };
             chart.Series.Add(rowSeries);

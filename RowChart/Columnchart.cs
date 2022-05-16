@@ -7,6 +7,7 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Media;
+using ApiClient;
 
 namespace ColumnCharts
 {
@@ -21,26 +22,38 @@ namespace ColumnCharts
             this.chart = chart;
         }
 
-        public void DrawColumnchart(Dictionary<string, double> value_count)
+        public void AddSeries(string title, Dictionary<string, double> statistic, Brush color)
+        {
+            ChartValues<double> values = new ChartValues<double>();
+            foreach (var item in statistic)
+            {
+                values.Add(item.Value);
+                labels.Add(item.Key);
+            };
+
+
+            ColumnSeries columnSeries = new ColumnSeries
+            {
+                Title = title,
+                Values = values,
+                DataLabels = true,
+                Fill = color,
+                Foreground = Brushes.WhiteSmoke,
+            };
+            chart.Series.Add(columnSeries);
+            
+        }
+
+        public void DrawColumnchart(Dictionary<string, double> salaryExp)
         {
             chart.Series.Clear();
             chart.AxisX.Clear();
             chart.AxisY.Clear();
-            foreach (var item in value_count)
-            {
-                labels.Add(item.Key);
-                values.Add(item.Value);
-            };
+            labels.Clear();
 
-            ColumnSeries columnSeries = new ColumnSeries
-            {
-                Title = "Median",
-                Values = values,
-                DataLabels = true,
-                Fill = Brushes.DarkBlue,
-                Foreground = Brushes.WhiteSmoke,
-            };
-            chart.Series.Add(columnSeries);
+            AddSeries("Median", salaryExp, Brushes.DarkBlue);
+            
+
 
             chart.AxisX.Add(new Axis
             {
@@ -52,9 +65,10 @@ namespace ColumnCharts
 
             chart.AxisY.Add(new Axis
             {
-                Title = "Median salary (DOLLAR)",
+                Title = "Salary (DOLLAR)",
                 Foreground = Brushes.WhiteSmoke
             });
         }
+
     }
 }
