@@ -10,6 +10,7 @@ namespace Dashboard
     public partial class MainForm : Form
     {
         private Piechart pieChart;
+        private Piechart pieChart2;
         private Columnchart columnChart;
         private Rowchart rowChart;
         private VacanciesInfo vacanciesInfo;
@@ -18,7 +19,6 @@ namespace Dashboard
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -57,11 +57,12 @@ namespace Dashboard
 
         private void UpdateCharts(VacanciesInfo vacanciesInfo)
         {
+            
             pieChart = new Piechart(workingExp);
             pieChart.DrawPiechart(vacanciesInfo.Experience);
 
-            pieChart = new Piechart(schedule);
-            pieChart.DrawPiechart(vacanciesInfo.Schedule);
+            pieChart2 = new Piechart(schedule);
+            pieChart2.DrawPiechart(vacanciesInfo.Schedule);
 
             rowChart = new Rowchart(skills);
             rowChart.DrawRowchart(vacanciesInfo.Skills);

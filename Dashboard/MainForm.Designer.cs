@@ -221,7 +221,7 @@
             this.schedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.schedule.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.schedule.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.schedule.Location = new System.Drawing.Point(369, 488);
+            this.schedule.Location = new System.Drawing.Point(670, 488);
             this.schedule.Name = "schedule";
             this.schedule.Size = new System.Drawing.Size(272, 304);
             this.schedule.TabIndex = 8;
@@ -292,7 +292,7 @@
             this.workingExp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.workingExp.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.workingExp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.workingExp.Location = new System.Drawing.Point(670, 488);
+            this.workingExp.Location = new System.Drawing.Point(369, 488);
             this.workingExp.Name = "workingExp";
             this.workingExp.Size = new System.Drawing.Size(272, 304);
             this.workingExp.TabIndex = 14;
