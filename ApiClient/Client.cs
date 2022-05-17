@@ -12,7 +12,7 @@ namespace ApiClient
     {
         public static async Task<VacanciesInfo> GetVacanciesInfoAsync(string name)
         {
-
+            name = name.Replace("#", "%23");
             return await Task.Run(() =>
             {
                 string url = $"http://127.0.0.1:8000/vacancies/{name}";

@@ -52,7 +52,7 @@
             this.skills = new LiveCharts.WinForms.CartesianChart();
             this.help = new System.Windows.Forms.Button();
             this.word = new System.Windows.Forms.Button();
-            this.excel = new System.Windows.Forms.Button();
+            this.PowerPoint = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -64,18 +64,20 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(36, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 18);
+            this.label1.Size = new System.Drawing.Size(206, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Enter vacancy name:";
+            this.label1.Text = "Введите название вакансии:";
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(23, 39);
@@ -87,6 +89,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -108,17 +111,19 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(36, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 18);
+            this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Number of vacancies:";
+            this.label2.Text = "Количество вакансий:";
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label8);
@@ -171,9 +176,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(28, 11);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 18);
+            this.label5.Size = new System.Drawing.Size(41, 18);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Min:";
+            this.label5.Text = "Мин:";
             // 
             // label6
             // 
@@ -181,9 +186,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(28, 59);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 18);
+            this.label6.Size = new System.Drawing.Size(49, 18);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Max:";
+            this.label6.Text = "Макс:";
             // 
             // label7
             // 
@@ -191,12 +196,13 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(28, 109);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 18);
+            this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Median:";
+            this.label7.Text = "Медиана:";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -208,6 +214,7 @@
             // 
             // salary
             // 
+            this.salary.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.salary.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.salary.Location = new System.Drawing.Point(369, 39);
@@ -218,6 +225,7 @@
             // 
             // schedule
             // 
+            this.schedule.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.schedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.schedule.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.schedule.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -229,66 +237,72 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label11.Location = new System.Drawing.Point(386, 18);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(143, 18);
+            this.label11.Size = new System.Drawing.Size(78, 18);
             this.label11.TabIndex = 9;
-            this.label11.Text = "Salary by experience";
+            this.label11.Text = "Зарплата:";
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label12.Location = new System.Drawing.Point(679, 467);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 18);
+            this.label12.Size = new System.Drawing.Size(122, 18);
             this.label12.TabIndex = 10;
-            this.label12.Text = "Schedule";
+            this.label12.Text = "График работы:";
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label13.Location = new System.Drawing.Point(36, 384);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 18);
+            this.label13.Size = new System.Drawing.Size(123, 18);
             this.label13.TabIndex = 11;
-            this.label13.Text = "Top-10 skills";
+            this.label13.Text = "Топ-10 навыков:";
             // 
             // label14
             // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label14.Location = new System.Drawing.Point(386, 467);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(139, 18);
+            this.label14.Size = new System.Drawing.Size(106, 18);
             this.label14.TabIndex = 12;
-            this.label14.Text = "Working experience";
+            this.label14.Text = "Опыт работы:";
             // 
             // update
             // 
+            this.update.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.update.Location = new System.Drawing.Point(240, 39);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(103, 29);
             this.update.TabIndex = 13;
-            this.update.Text = "update";
+            this.update.Text = "обновить";
             this.update.UseVisualStyleBackColor = false;
-            this.update.Click += new System.EventHandler(this.button1_Click);
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // workingExp
             // 
+            this.workingExp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.workingExp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.workingExp.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.workingExp.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -300,6 +314,7 @@
             // 
             // skills
             // 
+            this.skills.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.skills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.skills.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.skills.Location = new System.Drawing.Point(21, 405);
@@ -311,41 +326,45 @@
             // help
             // 
             this.help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.help.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.help.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.help.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.help.Location = new System.Drawing.Point(211, 8);
+            this.help.Location = new System.Drawing.Point(224, 7);
             this.help.Name = "help";
-            this.help.Size = new System.Drawing.Size(77, 29);
+            this.help.Size = new System.Drawing.Size(104, 29);
             this.help.TabIndex = 16;
-            this.help.Text = "Help";
+            this.help.Text = "О программе";
             this.help.UseVisualStyleBackColor = false;
+            this.help.Click += new System.EventHandler(this.help_Click);
             // 
             // word
             // 
             this.word.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.word.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.word.Location = new System.Drawing.Point(116, 8);
+            this.word.Location = new System.Drawing.Point(125, 7);
             this.word.Name = "word";
-            this.word.Size = new System.Drawing.Size(77, 29);
+            this.word.Size = new System.Drawing.Size(85, 29);
             this.word.TabIndex = 17;
             this.word.Text = "Word";
             this.word.UseVisualStyleBackColor = false;
+            this.word.Click += new System.EventHandler(this.word_Click);
             // 
-            // excel
+            // PowerPoint
             // 
-            this.excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.excel.Location = new System.Drawing.Point(20, 8);
-            this.excel.Name = "excel";
-            this.excel.Size = new System.Drawing.Size(77, 29);
-            this.excel.TabIndex = 18;
-            this.excel.Text = "Excel";
-            this.excel.UseVisualStyleBackColor = false;
+            this.PowerPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
+            this.PowerPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PowerPoint.Location = new System.Drawing.Point(20, 7);
+            this.PowerPoint.Name = "PowerPoint";
+            this.PowerPoint.Size = new System.Drawing.Size(89, 29);
+            this.PowerPoint.TabIndex = 18;
+            this.PowerPoint.Text = "PowerPoint";
+            this.PowerPoint.UseVisualStyleBackColor = false;
+            this.PowerPoint.Click += new System.EventHandler(this.PowerPoint_Click);
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.panel3.Controls.Add(this.excel);
+            this.panel3.Controls.Add(this.PowerPoint);
             this.panel3.Controls.Add(this.help);
             this.panel3.Controls.Add(this.word);
             this.panel3.Location = new System.Drawing.Point(369, 833);
@@ -355,33 +374,36 @@
             // 
             // label15
             // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.Location = new System.Drawing.Point(386, 812);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 18);
+            this.label15.Size = new System.Drawing.Size(234, 18);
             this.label15.TabIndex = 19;
-            this.label15.Text = "Additional features";
+            this.label15.Text = "Дополнительные возможности:";
             // 
             // label16
             // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(761, 854);
+            this.label16.Location = new System.Drawing.Point(749, 853);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(181, 16);
+            this.label16.Size = new System.Drawing.Size(193, 16);
             this.label16.TabIndex = 20;
-            this.label16.Text = "Powered by Nesterov Philipp";
+            this.label16.Text = "Разработчик: Нестеров Ф.С.";
             // 
             // label17
             // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17.Location = new System.Drawing.Point(92, 81);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 16);
+            this.label17.Size = new System.Drawing.Size(77, 16);
             this.label17.TabIndex = 21;
-            this.label17.Text = "loading...";
+            this.label17.Text = "загрузка...";
             // 
             // MainForm
             // 
@@ -410,10 +432,10 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.MinimumSize = new System.Drawing.Size(984, 943);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HH vacancies analysis";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -450,7 +472,7 @@
         private LiveCharts.WinForms.CartesianChart skills;
         private System.Windows.Forms.Button help;
         private System.Windows.Forms.Button word;
-        private System.Windows.Forms.Button excel;
+        private System.Windows.Forms.Button PowerPoint;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;

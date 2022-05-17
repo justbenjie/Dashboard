@@ -10,16 +10,12 @@ using System.Windows.Forms;
 
 namespace Dashboard
 {
-    public partial class InfoForm : Form
+    public partial class SplashScreen : Form
     {
-        public InfoForm()
+        public SplashScreen()
         {
             InitializeComponent();
         }
 
-        private void InfoForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
