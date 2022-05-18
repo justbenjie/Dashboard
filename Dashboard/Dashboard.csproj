@@ -105,7 +105,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PowerPointCreator.cs" />
+    <Compile Include="SettingData.cs" />
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,7 +114,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordCreator.cs" />
+    <Compile Include="XMLCreator.cs" />
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,17 +150,13 @@
       <Project>{3614176e-3c15-45d6-b195-8bfdf52af883}</Project>
       <Name>ApiClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Piechart\PieCharts.csproj">
-      <Project>{9d03d038-65da-4d15-8db2-81deca135d9d}</Project>
-      <Name>PieCharts</Name>
+    <ProjectReference Include="..\Charts\Charts.csproj">
+      <Project>{209d72e5-4c58-4d08-be1b-b2578b3658a1}</Project>
+      <Name>Charts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RowCharts\RowCharts.csproj">
-      <Project>{5e115244-b3b8-46d5-ad68-2ec6f2cb91fe}</Project>
-      <Name>RowCharts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RowChart\ColumnCharts.csproj">
-      <Project>{9ddb6f9b-8350-4cef-b727-af7eb2a28665}</Project>
-      <Name>ColumnCharts</Name>
+    <ProjectReference Include="..\OutputMicrosoft\OutputMicrosoft.csproj">
+      <Project>{61e2abd5-c917-4232-9f1f-9bbc8d898c8c}</Project>
+      <Name>OutputMicrosoft</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

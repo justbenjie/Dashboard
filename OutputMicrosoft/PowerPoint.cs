@@ -1,9 +1,9 @@
-﻿using Microsoft.Office.Interop.PowerPoint;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
+using Microsoft.Office.Interop.PowerPoint;
 
-namespace DataPresentation
+namespace OutputMicrosoft
 {
-    public class PowerPointCreator
+    public class PowerPoint
     {
         static public void Show(string file)
         {

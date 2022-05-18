@@ -7,17 +7,16 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Media;
-using ApiClient;
 
-namespace ColumnCharts
+namespace Charts
 {
-    public class Columnchart
+    public class ColumnChart
     {
         LiveCharts.WinForms.CartesianChart chart;
         public ChartValues<double> values = new ChartValues<double> { };
         public IList<string> labels = new List<string>() { };
 
-        public Columnchart(LiveCharts.WinForms.CartesianChart chart)
+        public ColumnChart(LiveCharts.WinForms.CartesianChart chart)
         {
             this.chart = chart;
         }
@@ -41,7 +40,7 @@ namespace ColumnCharts
                 Foreground = Brushes.WhiteSmoke,
             };
             chart.Series.Add(columnSeries);
-            
+
         }
 
         public void DrawColumnchart(Dictionary<string, double> salaryExp)
@@ -52,7 +51,7 @@ namespace ColumnCharts
             labels.Clear();
 
             AddSeries("Median", salaryExp, Brushes.DarkBlue);
-            
+
 
 
             chart.AxisX.Add(new Axis
@@ -69,6 +68,5 @@ namespace ColumnCharts
                 Foreground = Brushes.WhiteSmoke
             });
         }
-
     }
 }

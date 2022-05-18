@@ -1,11 +1,10 @@
-﻿using Microsoft.Office.Interop.Word;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Microsoft.Office.Interop.Word;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
-namespace DataPresentation
+namespace OutputMicrosoft
 {
-    public class WordCreator
+    public class Word
     {
         private Microsoft.Office.Interop.Word.Application _wordApp;
         private Document _wordDoc;
@@ -13,7 +12,7 @@ namespace DataPresentation
         private string _style = "Обычный";
         private string _fontName = "Times New Roman";
 
-        public WordCreator()
+        public Word()
         {
             CreateWord();
             _wordApp.Visible = false;
@@ -61,7 +60,7 @@ namespace DataPresentation
 
         public void Enter()
         {
-           _paragraph = _wordDoc.Paragraphs.Add();
+            _paragraph = _wordDoc.Paragraphs.Add();
         }
 
         public void LoadImage(string nameImage, WdParagraphAlignment wdParagraphAlignment)

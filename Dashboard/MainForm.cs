@@ -1,32 +1,37 @@
-﻿using ApiClient;
-using ColumnCharts;
-using PieCharts;
-using RowCharts;
-using System;
+﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using DataPresentation;
 using Microsoft.Office.Interop.Word;
 using System.Drawing.Imaging;
-using System.Windows.Interop;
 using System.Drawing;
+using System.IO;
+using ApiClient;
+using Charts;
+using OutputMicrosoft;
 
 namespace Dashboard
 {
     public partial class MainForm : Form
     {
-        private Piechart pieChart;
-        private Piechart pieChart2;
-        private Columnchart columnChart;
-        private Rowchart rowChart;
+        private PieChart scheduleChart;
+        private PieChart experienceChart;
+        private ColumnChart salaryChart;
+        private RowChart skillsChart;
         private VacanciesInfo vacanciesInfo;
+        private SettingData data;
 
         public MainForm()
         {
             Thread thread = new Thread(new ThreadStart(StartForm));
             thread.Start();
             InitializeComponent();
-            UpdatedForm();
+            data = new SettingData();
+            if (File.Exists("settings.xml"))
+            {
+                data = XMLCreator.ReadData(data, "settings.xml");
+                vacancyName.Text = data.vacancyName;
+            }
+            UpdateForm();
             Thread.Sleep(5000);
             thread.Abort();
         }
@@ -36,13 +41,23 @@ namespace Dashboard
             System.Windows.Forms.Application.Run(new SplashScreen());
         }
 
-        private async void UpdatedForm()
+        private async void UpdateForm()
         {
-            update.Enabled = false;
+            buttonUpdate.Enabled = false;
             label17.Text = "loading...";
 
-            string vacancyName = textBox1.Text.ToString();
-            
+            string vacancyName = this.vacancyName.Text.ToString();
+            try
+            {
+                
+                data.vacancyName = vacancyName;
+                XMLCreator.SavaData(data, @"settings.xml");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             vacanciesInfo = await Client.GetVacanciesInfoAsync(vacancyName);
             if (vacanciesInfo == null)
             {
@@ -54,7 +69,7 @@ namespace Dashboard
                 UpdateCharts(vacanciesInfo);
                 label17.Text = "loaded successfully!";
             }
-            update.Enabled = true;
+            buttonUpdate.Enabled = true;
 
         }
 
@@ -69,44 +84,44 @@ namespace Dashboard
         private void UpdateCharts(VacanciesInfo vacanciesInfo)
         {
             
-            pieChart = new Piechart(workingExp);
-            pieChart.DrawPiechart(vacanciesInfo.Experience);
+            experienceChart = new PieChart(chartWorkingExp);
+            experienceChart.DrawPiechart(vacanciesInfo.Experience);
 
-            pieChart2 = new Piechart(schedule);
-            pieChart2.DrawPiechart(vacanciesInfo.Schedule);
+            scheduleChart = new PieChart(chartSchedule);
+            scheduleChart.DrawPiechart(vacanciesInfo.Schedule);
 
-            rowChart = new Rowchart(skills);
-            rowChart.DrawRowchart(vacanciesInfo.Skills);
+            skillsChart = new RowChart(chartSkills);
+            skillsChart.DrawRowchart(vacanciesInfo.Skills);
 
-            columnChart = new Columnchart(salary);
-            columnChart.DrawColumnchart(vacanciesInfo.Salary.SalaryExpMedian);
+            salaryChart = new ColumnChart(chartSalary);
+            salaryChart.DrawColumnchart(vacanciesInfo.Salary.SalaryExpMedian);
             
 
         }
 
         private void update_Click(object sender, EventArgs e)
         {
-            UpdatedForm();
+            UpdateForm();
         }
 
-        private void PowerPoint_Click(object sender, EventArgs e)
+        private void buttonPowerPoint_Click(object sender, EventArgs e)
         {
-            PowerPoint.Enabled = false;
-            PowerPointCreator.Show(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\Анализ вакансий с HeadHunter.pptx");
-            PowerPoint.Enabled = true;
+            buttonPowerPoint.Enabled = false;
+            PowerPoint.Show(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\Анализ вакансий с HeadHunter.pptx");
+            buttonPowerPoint.Enabled = true;
         }
 
-        private void word_Click(object sender, EventArgs e)
+        private void buttonWord_Click(object sender, EventArgs e)
         {
-            word.Enabled = false;
+            buttonWord.Enabled = false;
 
-            Bitmap bitmap = new Bitmap(salary.Size.Width, salary.Size.Height);    
-            salary.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height));
+            Bitmap bitmap = new Bitmap(chartSalary.Size.Width, chartSalary.Size.Height);    
+            chartSalary.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height));
             bitmap.Save(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\salaryChart.png", ImageFormat.Png);
 
-            WordCreator wordCreator = new WordCreator();
+            Word wordCreator = new Word();
 
-            wordCreator.AddParagraph(textBox1.Text, WdParagraphAlignment.wdAlignParagraphCenter);
+            wordCreator.AddParagraph(vacancyName.Text, WdParagraphAlignment.wdAlignParagraphCenter);
             wordCreator.Enter();
 
             wordCreator.AddParagraph("Number of vacancies:", WdParagraphAlignment.wdAlignParagraphCenter);
@@ -130,14 +145,14 @@ namespace Dashboard
             wordCreator.Visible = true;
             wordCreator.Dispose();
 
-            word.Enabled = true;
+            buttonWord.Enabled = true;
         }
 
-        private void help_Click(object sender, EventArgs e)
+        private void buttonHelp_Click(object sender, EventArgs e)
         {
-            help.Enabled = false;
+            buttonHelp.Enabled = false;
             Help.ShowHelp(this, @"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\helpFile.chm");
-            help.Enabled = true;
+            buttonHelp.Enabled = true;
         }
 
         

@@ -8,15 +8,15 @@ using LiveCharts.Wpf;
 using LiveCharts.WinForms;
 using System.Windows.Media;
 
-namespace RowCharts
+namespace Charts
 {
-    public class Rowchart
+    public class RowChart
     {
         LiveCharts.WinForms.CartesianChart chart;
         public IList<string> labels = new List<string>() { };
         public ChartValues<double> values = new ChartValues<double> { };
 
-        public Rowchart(LiveCharts.WinForms.CartesianChart chart)
+        public RowChart(LiveCharts.WinForms.CartesianChart chart)
         {
             this.chart = chart;
         }
@@ -25,7 +25,7 @@ namespace RowCharts
         {
             chart.Series.Clear();
             chart.AxisX.Clear();
-            chart.AxisY.Clear();    
+            chart.AxisY.Clear();
             foreach (var item in value_count.Reverse())
             {
                 labels.Add(item.Key);
