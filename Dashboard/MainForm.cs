@@ -44,12 +44,13 @@ namespace Dashboard
         private async void UpdateForm()
         {
             buttonUpdate.Enabled = false;
-            label17.Text = "loading...";
+            label17.Text = "загрузка...";
 
             string vacancyName = this.vacancyName.Text.ToString();
+            string host = this.host.Text.ToString();
+
             try
             {
-                
                 data.vacancyName = vacancyName;
                 XMLCreator.SavaData(data, @"settings.xml");
             }
@@ -58,16 +59,16 @@ namespace Dashboard
                 MessageBox.Show(ex.Message);
             }
 
-            vacanciesInfo = await Client.GetVacanciesInfoAsync(vacancyName);
+            vacanciesInfo = await ClientTCP.GetVacanciesInfoAsync(vacancyName, host);
             if (vacanciesInfo == null)
             {
-                label17.Text = "Can't connect to server!";
+                label17.Text = "Связь с сервером не установлена!";
             }
             else
             {
                 UpdateLabels(vacanciesInfo);
                 UpdateCharts(vacanciesInfo);
-                label17.Text = "loaded successfully!";
+                label17.Text = "Данные успешно получены!";
             }
             buttonUpdate.Enabled = true;
 
@@ -148,13 +149,28 @@ namespace Dashboard
             buttonWord.Enabled = true;
         }
 
-        private void buttonHelp_Click(object sender, EventArgs e)
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            string name = "О программе";
+            string description = "Приложение для анализа вакансий с HeadHunter. v.1.0\nРазработано Нестеровым Ф.С.";
+
+            MessageBox.Show(description, name);
+        }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            buttonExcel.Enabled = false;
+            Excel.Show(@"D:\БНТУ курс 2\РПВС\2 семестр\HH_analysis\logging.xlsx");
+            buttonExcel.Enabled = true;
+        }
+
+        private void buttonManual_Click(object sender, EventArgs e)
         {
             buttonHelp.Enabled = false;
             Help.ShowHelp(this, @"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\helpFile.chm");
             buttonHelp.Enabled = true;
         }
 
-        
+       
     }
 }
