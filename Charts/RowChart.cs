@@ -34,7 +34,7 @@ namespace Charts
 
             RowSeries rowSeries = new RowSeries
             {
-                Title = "Frequency",
+                Title = "Частота",
                 Values = values,
                 DataLabels = true,
                 Fill = Brushes.Red,
@@ -44,13 +44,13 @@ namespace Charts
 
             chart.AxisX.Add(new Axis
             {
-                Title = "Frequency",
+                Title = "Частота",
                 Foreground = Brushes.WhiteSmoke
             });
 
             chart.AxisY.Add(new Axis
             {
-                Title = "Skills",
+                Title = "Навыки",
                 Labels = labels,
                 Foreground = Brushes.WhiteSmoke
             });

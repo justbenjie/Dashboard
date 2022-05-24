@@ -50,13 +50,13 @@ namespace Charts
             chart.AxisY.Clear();
             labels.Clear();
 
-            AddSeries("Median", salaryExp, Brushes.DarkBlue);
+            AddSeries("Медиана", salaryExp, Brushes.DarkBlue);
 
 
 
             chart.AxisX.Add(new Axis
             {
-                Title = "Experience",
+                Title = "Опыт работы",
                 Labels = labels,
                 Foreground = Brushes.WhiteSmoke
 
@@ -64,7 +64,7 @@ namespace Charts
 
             chart.AxisY.Add(new Axis
             {
-                Title = "Salary (DOLLAR)",
+                Title = "Зарплата (доллары)",
                 Foreground = Brushes.WhiteSmoke
             });
         }
