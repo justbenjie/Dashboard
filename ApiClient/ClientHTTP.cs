@@ -8,9 +8,9 @@ using System.Net;
 
 namespace ApiClient
 {
-    public static class Client
+    public static class ClientHTTP
     {
-        public static async Task<VacanciesInfo> GetVacanciesInfoAsync(string name)
+        public static async Task<VacanciesInfo> GetVacanciesInfoAsync(string name, string host)
         {
             name = name.Replace("#", "%23");
             return await Task.Run(() =>
@@ -35,3 +35,4 @@ namespace ApiClient
 
     }
 }
+ 
