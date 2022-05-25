@@ -16,7 +16,7 @@ namespace ApiClient
         {
             const int bytesize = 1024 * 1024;
             byte[] bytes = new byte[bytesize];
-            //name = name.Replace("#", "%23");
+            
             return await Task.Run(() =>
             {
 
@@ -27,7 +27,7 @@ namespace ApiClient
 
                 }*/
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(host);
-                IPAddress ipAddress = ipHostInfo.AddressList[0];
+                IPAddress ipAddress = ipHostInfo.AddressList.Last();
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, 8888);
 
                 // Create a TCP/IP  socket.  
@@ -35,37 +35,32 @@ namespace ApiClient
                     SocketType.Stream, ProtocolType.Tcp);
 
                 // Connect the socket to the remote endpoint. Catch any errors.  
-                try
-                {
-                    sender.Connect(remoteEP);
+               
+                sender.Connect(remoteEP);
 
-                    Console.WriteLine("Socket connected to {0}",
-                        sender.RemoteEndPoint.ToString());
+                Console.WriteLine("Socket connected to {0}",
+                    sender.RemoteEndPoint.ToString());
 
-                    // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.UTF8.GetBytes(name);
+                // Encode the data string into a byte array.  
+                byte[] msg = Encoding.UTF8.GetBytes(name);
 
-                    // Send the data through the socket.  
-                    int bytesSent = sender.Send(msg);
+                // Send the data through the socket.  
+                int bytesSent = sender.Send(msg);
 
-                    // Receive the response from the remote device.  
-                    int bytesRec = sender.Receive(bytes);
+                // Receive the response from the remote device.  
+                int bytesRec = sender.Receive(bytes);
 
-                    string results = Encoding.UTF8.GetString(bytes, 0, bytesRec);
-                    VacanciesInfo vacanciesInfo = JsonConvert.DeserializeObject<VacanciesInfo>(results);
+                string results = Encoding.UTF8.GetString(bytes, 0, bytesRec);
+                VacanciesInfo vacanciesInfo = JsonConvert.DeserializeObject<VacanciesInfo>(results);
                         
-                    // Release the socket.  
-                    sender.Shutdown(SocketShutdown.Both);
-                    sender.Close();
-                    return vacanciesInfo;
+                // Release the socket.  
+                sender.Shutdown(SocketShutdown.Both);
+                sender.Close();
+                return vacanciesInfo;
 
-                }
+                
               
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.ToString());
-                    return null;
-                }
+                
             });
         }
     }

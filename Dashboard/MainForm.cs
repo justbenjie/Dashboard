@@ -30,6 +30,7 @@ namespace Dashboard
             {
                 data = XMLCreator.ReadData(data, "settings.xml");
                 vacancyName.Text = data.vacancyName;
+                host.Text = data.host;
             }
             UpdateForm();
             Thread.Sleep(5000);
@@ -52,24 +53,27 @@ namespace Dashboard
             try
             {
                 data.vacancyName = vacancyName;
+                data.host = host;
+
                 XMLCreator.SavaData(data, @"settings.xml");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            vacanciesInfo = await ClientTCP.GetVacanciesInfoAsync(vacancyName, host);
-            if (vacanciesInfo == null)
+            try
             {
-                label17.Text = "Связь с сервером не установлена!";
-            }
-            else
-            {
+                vacanciesInfo = await ClientTCP.GetVacanciesInfoAsync(vacancyName, host);
                 UpdateLabels(vacanciesInfo);
                 UpdateCharts(vacanciesInfo);
                 label17.Text = "Данные успешно получены!";
             }
+
+            catch (Exception e)
+            {
+                label17.Text = "Связь с сервером не установлена!";
+            }
+            
             buttonUpdate.Enabled = true;
 
         }
