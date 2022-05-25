@@ -8,7 +8,7 @@ namespace Dashboard
 {
     public class SettingData
     {
-        public string vacancyName { get; set; }
-        public string host { get; set; }
+        public string VacancyName { get; set; }
+        public string Host { get; set; }
     }
 }

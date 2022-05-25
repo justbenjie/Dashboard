@@ -12,15 +12,16 @@ namespace Charts
 {
     public class ColumnChart
     {
-        LiveCharts.WinForms.CartesianChart chart;
-        public ChartValues<double> values = new ChartValues<double> { };
-        public IList<string> labels = new List<string>() { };
+        private LiveCharts.WinForms.CartesianChart chart;
+        private ChartValues<double> values = new ChartValues<double> { };
+        private IList<string> labels = new List<string>() { };
 
         public ColumnChart(LiveCharts.WinForms.CartesianChart chart)
         {
             this.chart = chart;
         }
 
+        // Add series
         public void AddSeries(string title, Dictionary<string, double> statistic, Brush color)
         {
             ChartValues<double> values = new ChartValues<double>();
@@ -29,7 +30,6 @@ namespace Charts
                 values.Add(item.Value);
                 labels.Add(item.Key);
             };
-
 
             ColumnSeries columnSeries = new ColumnSeries
             {
@@ -45,15 +45,15 @@ namespace Charts
 
         public void DrawColumnchart(Dictionary<string, double> salaryExp)
         {
+            // Clear chart
             chart.Series.Clear();
             chart.AxisX.Clear();
             chart.AxisY.Clear();
             labels.Clear();
 
             AddSeries("Медиана", salaryExp, Brushes.DarkBlue);
-
-
-
+            
+            // Axis X
             chart.AxisX.Add(new Axis
             {
                 Title = "Опыт работы",
@@ -62,6 +62,7 @@ namespace Charts
 
             });
 
+            // Axis Y
             chart.AxisY.Add(new Axis
             {
                 Title = "Зарплата (доллары)",

@@ -12,6 +12,7 @@ namespace Dashboard
     {
         public static void SavaData(object obj, string filename)
         {
+            // Saving data from obj to xml file
             XmlSerializer xmlSerializer = new XmlSerializer(obj.GetType()); 
             TextWriter writer = new StreamWriter(filename);
             xmlSerializer.Serialize(writer, obj);
@@ -20,7 +21,7 @@ namespace Dashboard
 
         public static SettingData ReadData(SettingData obj, string filename)
         {
-            
+            // Loading data from xml file to obj
             XmlSerializer xmlSerializer = new XmlSerializer(obj.GetType());
             FileStream read = new FileStream(filename, FileMode.Open, FileAccess.Read);
             obj = (SettingData)xmlSerializer.Deserialize(read);

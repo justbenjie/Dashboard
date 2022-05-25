@@ -84,7 +84,7 @@ namespace OutputMicrosoft
 
         public void Dispose()
         {
-            // Закрыть.
+            // Close document
             if (_wordDoc != null)
                 Marshal.ReleaseComObject(_wordDoc);
             if (_wordApp != null)

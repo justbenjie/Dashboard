@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ApiClient
-{ 
+{
+    // Model of recieved from server data
     public class VacanciesInfo
     {
         public int Count { get; set; }

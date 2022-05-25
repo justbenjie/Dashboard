@@ -10,6 +10,7 @@ namespace ApiClient
 {
     public static class ClientHTTP
     {
+        // Async get vacancies from server by http request 
         public static async Task<VacanciesInfo> GetVacanciesInfoAsync(string name, string host)
         {
             name = name.Replace("#", "%23");
@@ -23,9 +24,7 @@ namespace ApiClient
                 string results = Encoding.UTF8.GetString(client.DownloadData(url));
                 VacanciesInfo vacanciesInfo = JsonConvert.DeserializeObject<VacanciesInfo>(results);
                 return vacanciesInfo;
-                
-                
-                
+
             });
 
         }

@@ -13,32 +13,38 @@ namespace Dashboard
 {
     public partial class MainForm : Form
     {
-        private PieChart scheduleChart;
+        private PieChart scheduleChart; 
         private PieChart experienceChart;
         private ColumnChart salaryChart;
         private RowChart skillsChart;
-        private VacanciesInfo vacanciesInfo;
-        private SettingData data;
+        private VacanciesInfo vacanciesInfo; // For received from server information about vacancies
+        private SettingData data; // For cached setting parameters
+        private string outputsDirectory = Path.Combine(Directory.GetCurrentDirectory(),@"../../Output/"); // Directory with outputs
 
         public MainForm()
         {
+            // Create new Thread for run splash screen 
             Thread thread = new Thread(new ThreadStart(StartForm));
             thread.Start();
             InitializeComponent();
             data = new SettingData();
+
+            // Load data from xml file
             if (File.Exists("settings.xml"))
             {
                 data = XMLCreator.ReadData(data, "settings.xml");
-                vacancyName.Text = data.vacancyName;
-                host.Text = data.host;
+                vacancyName.Text = data.VacancyName;
+                host.Text = data.Host;
             }
+            
             UpdateForm();
-            Thread.Sleep(5000);
+            Thread.Sleep(6000);
             thread.Abort();
         }
 
         private void StartForm()
         {
+            // Run splash screen form
             System.Windows.Forms.Application.Run(new SplashScreen());
         }
 
@@ -47,13 +53,13 @@ namespace Dashboard
             buttonUpdate.Enabled = false;
             label17.Text = "загрузка...";
 
+            // Save data from texboxes to xml file
             string vacancyName = this.vacancyName.Text.ToString();
             string host = this.host.Text.ToString();
-
             try
             {
-                data.vacancyName = vacancyName;
-                data.host = host;
+                data.VacancyName = vacancyName;
+                data.Host = host;
 
                 XMLCreator.SavaData(data, @"settings.xml");
             }
@@ -61,9 +67,11 @@ namespace Dashboard
             {
                 MessageBox.Show(ex.Message);
             }
+
+            // Async get vacancies from server
             try
             {
-                vacanciesInfo = await ClientTCP.GetVacanciesInfoAsync(vacancyName, host);
+                vacanciesInfo = await ClientHTTP.GetVacanciesInfoAsync(vacancyName, host);
                 UpdateLabels(vacanciesInfo);
                 UpdateCharts(vacanciesInfo);
                 label17.Text = "Данные успешно получены!";
@@ -80,6 +88,7 @@ namespace Dashboard
 
         private void UpdateLabels(VacanciesInfo vacanciesInfo)
         {
+            // Update labels
             label3.Text = vacanciesInfo.Count.ToString();
             label9.Text = vacanciesInfo.Salary.SalaryMin.ToString() + " $";
             label8.Text = vacanciesInfo.Salary.SalaryMax.ToString() + " $";
@@ -88,7 +97,7 @@ namespace Dashboard
 
         private void UpdateCharts(VacanciesInfo vacanciesInfo)
         {
-            
+            // Update charts 
             experienceChart = new PieChart(chartWorkingExp);
             experienceChart.DrawPiechart(vacanciesInfo.Experience);
 
@@ -100,8 +109,6 @@ namespace Dashboard
 
             salaryChart = new ColumnChart(chartSalary);
             salaryChart.DrawColumnchart(vacanciesInfo.Salary.SalaryExpMedian);
-            
-
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -111,21 +118,25 @@ namespace Dashboard
 
         private void buttonPowerPoint_Click(object sender, EventArgs e)
         {
+            // Open PowerPoint presentation
             buttonPowerPoint.Enabled = false;
-            PowerPoint.Show(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\Анализ вакансий с HeadHunter.pptx");
+            PowerPoint.Show(outputsDirectory + "Анализ вакансий с HeadHunter.pptx");
             buttonPowerPoint.Enabled = true;
         }
 
         private void buttonWord_Click(object sender, EventArgs e)
         {
+            // Load some vacancies info to word file and open it 
             buttonWord.Enabled = false;
 
+            // Save salary chart to png
             Bitmap bitmap = new Bitmap(chartSalary.Size.Width, chartSalary.Size.Height);    
             chartSalary.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            bitmap.Save(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\salaryChart.png", ImageFormat.Png);
+            bitmap.Save(outputsDirectory + "salaryChart.png", ImageFormat.Png);
 
             Word wordCreator = new Word();
-
+            
+            // Add text information 
             wordCreator.AddParagraph(vacancyName.Text, WdParagraphAlignment.wdAlignParagraphCenter);
             wordCreator.Enter();
 
@@ -146,7 +157,8 @@ namespace Dashboard
             wordCreator.AddText(vacanciesInfo.Salary.SalaryMedian.ToString(), WdParagraphAlignment.wdAlignParagraphLeft);
             wordCreator.Enter();
 
-            wordCreator.LoadImage(@"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\salaryChart.png", WdParagraphAlignment.wdAlignParagraphCenter);
+            // Add salary chart 
+            wordCreator.LoadImage(outputsDirectory + "salaryChart.png", WdParagraphAlignment.wdAlignParagraphCenter);
             wordCreator.Visible = true;
             wordCreator.Dispose();
 
@@ -163,15 +175,17 @@ namespace Dashboard
 
         private void buttonExcel_Click(object sender, EventArgs e)
         {
+            // Open Excel with parsed from by server data from HH API
             buttonExcel.Enabled = false;
-            Excel.Show(@"D:\БНТУ курс 2\РПВС\2 семестр\HH_analysis\logging.xlsx");
+            Excel.Show(outputsDirectory + "../../../HH_analysis/logging.xlsx");
             buttonExcel.Enabled = true;
         }
 
         private void buttonManual_Click(object sender, EventArgs e)
         {
+            // Open manual (helpfile)
             buttonHelp.Enabled = false;
-            Help.ShowHelp(this, @"D:\БНТУ курс 2\РПВС\2 семестр\Dashboard\Dashboard\Output\helpFile.chm");
+            Help.ShowHelp(this, outputsDirectory + "helpFile.chm");
             buttonHelp.Enabled = true;
         }
 

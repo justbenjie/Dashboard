@@ -433,7 +433,7 @@
             this.host.Location = new System.Drawing.Point(21, 102);
             this.host.Multiline = true;
             this.host.Name = "host";
-            this.host.Size = new System.Drawing.Size(195, 25);
+            this.host.Size = new System.Drawing.Size(200, 25);
             this.host.TabIndex = 22;
             this.host.Text = "127.0.0.1";
             // 
@@ -452,6 +452,7 @@
             // 
             // MainForm
             // 
+            this.AcceptButton = this.buttonUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));

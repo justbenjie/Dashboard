@@ -21,11 +21,6 @@ namespace ApiClient
             {
 
                 // Establish the remote endpoint for the socket.  
-                Regex ip = new Regex(@"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b");
-                /*if (ip.IsMatch(host))
-                {
-
-                }*/
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(host);
                 IPAddress ipAddress = ipHostInfo.AddressList.Last();
                 IPEndPoint remoteEP = new IPEndPoint(ipAddress, 8888);
@@ -33,9 +28,9 @@ namespace ApiClient
                 // Create a TCP/IP  socket.  
                 Socket sender = new Socket(ipAddress.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
+                sender.ReceiveTimeout = 15000;
 
                 // Connect the socket to the remote endpoint. Catch any errors.  
-               
                 sender.Connect(remoteEP);
 
                 Console.WriteLine("Socket connected to {0}",
@@ -58,9 +53,6 @@ namespace ApiClient
                 sender.Close();
                 return vacanciesInfo;
 
-                
-              
-                
             });
         }
     }

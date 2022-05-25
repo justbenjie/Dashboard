@@ -12,9 +12,9 @@ namespace Charts
 {
     public class RowChart
     {
-        LiveCharts.WinForms.CartesianChart chart;
-        public IList<string> labels = new List<string>() { };
-        public ChartValues<double> values = new ChartValues<double> { };
+        private LiveCharts.WinForms.CartesianChart chart;
+        private IList<string> labels = new List<string>() { };
+        private ChartValues<double> values = new ChartValues<double> { };
 
         public RowChart(LiveCharts.WinForms.CartesianChart chart)
         {
@@ -23,15 +23,19 @@ namespace Charts
 
         public void DrawRowchart(Dictionary<string, int> value_count)
         {
+            // Clear chart
             chart.Series.Clear();
             chart.AxisX.Clear();
             chart.AxisY.Clear();
+
+            // Parse dictionary
             foreach (var item in value_count.Reverse())
             {
                 labels.Add(item.Key);
                 values.Add(item.Value);
             };
 
+            // Add new Series
             RowSeries rowSeries = new RowSeries
             {
                 Title = "Частота",
@@ -42,12 +46,14 @@ namespace Charts
             };
             chart.Series.Add(rowSeries);
 
+            // Axis X
             chart.AxisX.Add(new Axis
             {
                 Title = "Частота",
                 Foreground = Brushes.WhiteSmoke
             });
 
+            // Axis Y
             chart.AxisY.Add(new Axis
             {
                 Title = "Навыки",

@@ -12,25 +12,24 @@ namespace Charts
 {
     public class PieChart
     {
-        public LiveCharts.WinForms.PieChart chart;
-
-        public Func<ChartPoint, string> labelPoint = chartPoint =>
+        private LiveCharts.WinForms.PieChart chart;
+        private Func<ChartPoint, string> labelPoint = chartPoint =>
             string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
 
         public PieChart(LiveCharts.WinForms.PieChart chart)
         {
             this.chart = chart;
-
         }
 
         public void DrawPiechart(Dictionary<string, int> value_count)
         {
-
+            // Clear chart
             chart.Series.Clear();
             chart.AxisX.Clear();
             chart.AxisY.Clear();
             this.chart.Update(true, true);
 
+            // Adding values to piechart
             foreach (var item in value_count)
             {
                 PieSeries pieSeries = new PieSeries
@@ -47,21 +46,13 @@ namespace Charts
                 chart.Series.Add(pieSeries);
             }
 
-
+            // Legend
             DefaultLegend customLegend = new DefaultLegend();
             customLegend.BulletSize = 14;
             customLegend.Foreground = Brushes.WhiteSmoke;
             customLegend.Orientation = System.Windows.Controls.Orientation.Horizontal;
-
-
             chart.DefaultLegend = customLegend;
             chart.LegendLocation = LegendLocation.Bottom;
-
-
-
-
-            List<SolidColorBrush> brushes = new List<SolidColorBrush> { Brushes.DarkGreen, Brushes.DarkOrange, Brushes.DarkSlateBlue, Brushes.DarkViolet, Brushes.DarkGray };
-
         }
     }
 }
