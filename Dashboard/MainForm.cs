@@ -38,7 +38,7 @@ namespace Dashboard
             }
             
             UpdateForm();
-            Thread.Sleep(6000);
+            Thread.Sleep(4000);
             thread.Abort();
         }
 
@@ -71,7 +71,7 @@ namespace Dashboard
             // Async get vacancies from server
             try
             {
-                vacanciesInfo = await ClientHTTP.GetVacanciesInfoAsync(vacancyName, host);
+                vacanciesInfo = await ClientTCP.GetVacanciesInfoAsync(vacancyName, host);
                 UpdateLabels(vacanciesInfo);
                 UpdateCharts(vacanciesInfo);
                 label17.Text = "Данные успешно получены!";
@@ -116,79 +116,7 @@ namespace Dashboard
             UpdateForm();
         }
 
-        private void buttonPowerPoint_Click(object sender, EventArgs e)
-        {
-            // Open PowerPoint presentation
-            buttonPowerPoint.Enabled = false;
-            PowerPoint.Show(outputsDirectory + "Анализ вакансий с HeadHunter.pptx");
-            buttonPowerPoint.Enabled = true;
-        }
-
-        private void buttonWord_Click(object sender, EventArgs e)
-        {
-            // Load some vacancies info to word file and open it 
-            buttonWord.Enabled = false;
-
-            // Save salary chart to png
-            Bitmap bitmap = new Bitmap(chartSalary.Size.Width, chartSalary.Size.Height);    
-            chartSalary.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height));
-            bitmap.Save(outputsDirectory + "salaryChart.png", ImageFormat.Png);
-
-            Word wordCreator = new Word();
-            
-            // Add text information 
-            wordCreator.AddParagraph(vacancyName.Text, WdParagraphAlignment.wdAlignParagraphCenter);
-            wordCreator.Enter();
-
-            wordCreator.AddParagraph("Number of vacancies:", WdParagraphAlignment.wdAlignParagraphCenter);
-            wordCreator.AddText(vacanciesInfo.Count.ToString(), WdParagraphAlignment.wdAlignParagraphLeft);
-            wordCreator.Enter();
-
-            wordCreator.AddParagraph("Skills:", WdParagraphAlignment.wdAlignParagraphCenter);
-            foreach(var item in vacanciesInfo.Skills.Keys)
-            {
-                wordCreator.AddText(item, WdParagraphAlignment.wdAlignParagraphLeft);
-            }
-            wordCreator.Enter();
-
-            wordCreator.AddParagraph("Salary (min, median, max):", WdParagraphAlignment.wdAlignParagraphCenter);
-            wordCreator.AddText(vacanciesInfo.Salary.SalaryMin.ToString(), WdParagraphAlignment.wdAlignParagraphLeft);
-            wordCreator.AddText(vacanciesInfo.Salary.SalaryMedian.ToString(), WdParagraphAlignment.wdAlignParagraphLeft);
-            wordCreator.AddText(vacanciesInfo.Salary.SalaryMedian.ToString(), WdParagraphAlignment.wdAlignParagraphLeft);
-            wordCreator.Enter();
-
-            // Add salary chart 
-            wordCreator.LoadImage(outputsDirectory + "salaryChart.png", WdParagraphAlignment.wdAlignParagraphCenter);
-            wordCreator.Visible = true;
-            wordCreator.Dispose();
-
-            buttonWord.Enabled = true;
-        }
-
-        private void buttonAbout_Click(object sender, EventArgs e)
-        {
-            string name = "О программе";
-            string description = "Приложение для анализа вакансий с HeadHunter. v.1.0\nРазработано Нестеровым Ф.С.";
-
-            MessageBox.Show(description, name);
-        }
-
-        private void buttonExcel_Click(object sender, EventArgs e)
-        {
-            // Open Excel with parsed from by server data from HH API
-            buttonExcel.Enabled = false;
-            Excel.Show(outputsDirectory + "../../../HH_analysis/logging.xlsx");
-            buttonExcel.Enabled = true;
-        }
-
-        private void buttonManual_Click(object sender, EventArgs e)
-        {
-            // Open manual (helpfile)
-            buttonHelp.Enabled = false;
-            Help.ShowHelp(this, outputsDirectory + "helpFile.chm");
-            buttonHelp.Enabled = true;
-        }
-
+       
        
     }
 }

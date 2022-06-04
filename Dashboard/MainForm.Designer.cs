@@ -50,19 +50,11 @@
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.chartWorkingExp = new LiveCharts.WinForms.PieChart();
             this.chartSkills = new LiveCharts.WinForms.CartesianChart();
-            this.buttonHelp = new System.Windows.Forms.Button();
-            this.buttonWord = new System.Windows.Forms.Button();
-            this.buttonPowerPoint = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonManual = new System.Windows.Forms.Button();
-            this.buttonExcel = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.host = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -222,7 +214,7 @@
             this.chartSalary.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chartSalary.Location = new System.Drawing.Point(369, 39);
             this.chartSalary.Name = "chartSalary";
-            this.chartSalary.Size = new System.Drawing.Size(573, 410);
+            this.chartSalary.Size = new System.Drawing.Size(573, 422);
             this.chartSalary.TabIndex = 4;
             this.chartSalary.Text = "cartesianChart1";
             // 
@@ -232,9 +224,9 @@
             this.chartSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.chartSchedule.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chartSchedule.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.chartSchedule.Location = new System.Drawing.Point(670, 488);
+            this.chartSchedule.Location = new System.Drawing.Point(670, 507);
             this.chartSchedule.Name = "chartSchedule";
-            this.chartSchedule.Size = new System.Drawing.Size(272, 304);
+            this.chartSchedule.Size = new System.Drawing.Size(272, 371);
             this.chartSchedule.TabIndex = 8;
             this.chartSchedule.Text = "pieChart1";
             // 
@@ -258,7 +250,7 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Location = new System.Drawing.Point(679, 467);
+            this.label12.Location = new System.Drawing.Point(679, 486);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(122, 18);
             this.label12.TabIndex = 10;
@@ -284,7 +276,7 @@
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(26)))), ((int)(((byte)(54)))));
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(386, 467);
+            this.label14.Location = new System.Drawing.Point(386, 486);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 18);
             this.label14.TabIndex = 12;
@@ -295,7 +287,7 @@
             this.buttonUpdate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonUpdate.Location = new System.Drawing.Point(240, 100);
+            this.buttonUpdate.Location = new System.Drawing.Point(240, 99);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(103, 28);
             this.buttonUpdate.TabIndex = 13;
@@ -309,9 +301,9 @@
             this.chartWorkingExp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
             this.chartWorkingExp.Font = new System.Drawing.Font("Microsoft YaHei", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.chartWorkingExp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.chartWorkingExp.Location = new System.Drawing.Point(369, 488);
+            this.chartWorkingExp.Location = new System.Drawing.Point(369, 507);
             this.chartWorkingExp.Name = "chartWorkingExp";
-            this.chartWorkingExp.Size = new System.Drawing.Size(272, 304);
+            this.chartWorkingExp.Size = new System.Drawing.Size(272, 371);
             this.chartWorkingExp.TabIndex = 14;
             this.chartWorkingExp.Text = "pieChart3";
             // 
@@ -325,93 +317,6 @@
             this.chartSkills.Size = new System.Drawing.Size(322, 491);
             this.chartSkills.TabIndex = 15;
             this.chartSkills.Text = "cartesianChart1";
-            // 
-            // buttonHelp
-            // 
-            this.buttonHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonHelp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonHelp.Location = new System.Drawing.Point(454, 8);
-            this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(104, 29);
-            this.buttonHelp.TabIndex = 16;
-            this.buttonHelp.Text = "О программе";
-            this.buttonHelp.UseVisualStyleBackColor = false;
-            this.buttonHelp.Click += new System.EventHandler(this.buttonAbout_Click);
-            // 
-            // buttonWord
-            // 
-            this.buttonWord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.buttonWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonWord.Location = new System.Drawing.Point(115, 9);
-            this.buttonWord.Name = "buttonWord";
-            this.buttonWord.Size = new System.Drawing.Size(85, 29);
-            this.buttonWord.TabIndex = 17;
-            this.buttonWord.Text = "Word";
-            this.buttonWord.UseVisualStyleBackColor = false;
-            this.buttonWord.Click += new System.EventHandler(this.buttonWord_Click);
-            // 
-            // buttonPowerPoint
-            // 
-            this.buttonPowerPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.buttonPowerPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPowerPoint.Location = new System.Drawing.Point(20, 9);
-            this.buttonPowerPoint.Name = "buttonPowerPoint";
-            this.buttonPowerPoint.Size = new System.Drawing.Size(89, 29);
-            this.buttonPowerPoint.TabIndex = 18;
-            this.buttonPowerPoint.Text = "PowerPoint";
-            this.buttonPowerPoint.UseVisualStyleBackColor = false;
-            this.buttonPowerPoint.Click += new System.EventHandler(this.buttonPowerPoint_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.panel3.Controls.Add(this.buttonManual);
-            this.panel3.Controls.Add(this.buttonExcel);
-            this.panel3.Controls.Add(this.buttonPowerPoint);
-            this.panel3.Controls.Add(this.buttonHelp);
-            this.panel3.Controls.Add(this.buttonWord);
-            this.panel3.Location = new System.Drawing.Point(369, 833);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(573, 45);
-            this.panel3.TabIndex = 19;
-            // 
-            // buttonManual
-            // 
-            this.buttonManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.buttonManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonManual.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonManual.Location = new System.Drawing.Point(351, 8);
-            this.buttonManual.Name = "buttonManual";
-            this.buttonManual.Size = new System.Drawing.Size(97, 29);
-            this.buttonManual.TabIndex = 20;
-            this.buttonManual.Text = "Руководство";
-            this.buttonManual.UseVisualStyleBackColor = false;
-            this.buttonManual.Click += new System.EventHandler(this.buttonManual_Click);
-            // 
-            // buttonExcel
-            // 
-            this.buttonExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(39)))), ((int)(((byte)(71)))));
-            this.buttonExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonExcel.Location = new System.Drawing.Point(206, 9);
-            this.buttonExcel.Name = "buttonExcel";
-            this.buttonExcel.Size = new System.Drawing.Size(89, 29);
-            this.buttonExcel.TabIndex = 19;
-            this.buttonExcel.Text = "Excel";
-            this.buttonExcel.UseVisualStyleBackColor = false;
-            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(386, 812);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(234, 18);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "Дополнительные возможности:";
             // 
             // label17
             // 
@@ -460,8 +365,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.host);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chartSkills);
@@ -487,7 +390,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,14 +419,7 @@
         private System.Windows.Forms.Button buttonUpdate;
         private LiveCharts.WinForms.PieChart chartWorkingExp;
         private LiveCharts.WinForms.CartesianChart chartSkills;
-        private System.Windows.Forms.Button buttonHelp;
-        private System.Windows.Forms.Button buttonWord;
-        private System.Windows.Forms.Button buttonPowerPoint;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button buttonExcel;
-        private System.Windows.Forms.Button buttonManual;
         private System.Windows.Forms.TextBox host;
         private System.Windows.Forms.Label label16;
     }

@@ -7,19 +7,19 @@ using System.Net.Sockets;
 using System.Net;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
-
+    
 namespace ApiClient
 {
     public static class ClientTCP
     {
         public static async Task<VacanciesInfo> GetVacanciesInfoAsync(string name, string host)
         {
-            const int bytesize = 1024 * 1024;
+            const int bytesize = 128 * 128;
             byte[] bytes = new byte[bytesize];
-            
+
             return await Task.Run(() =>
             {
-
+            
                 // Establish the remote endpoint for the socket.  
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(host);
                 IPAddress ipAddress = ipHostInfo.AddressList.Last();
@@ -28,7 +28,7 @@ namespace ApiClient
                 // Create a TCP/IP  socket.  
                 Socket sender = new Socket(ipAddress.AddressFamily,
                     SocketType.Stream, ProtocolType.Tcp);
-                sender.ReceiveTimeout = 15000;
+                sender.ReceiveTimeout = 30000;
 
                 // Connect the socket to the remote endpoint. Catch any errors.  
                 sender.Connect(remoteEP);
@@ -47,7 +47,7 @@ namespace ApiClient
 
                 string results = Encoding.UTF8.GetString(bytes, 0, bytesRec);
                 VacanciesInfo vacanciesInfo = JsonConvert.DeserializeObject<VacanciesInfo>(results);
-                        
+
                 // Release the socket.  
                 sender.Shutdown(SocketShutdown.Both);
                 sender.Close();
